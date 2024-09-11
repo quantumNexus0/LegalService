@@ -91,7 +91,7 @@ const Navigation = () => {
                 aria-label="Search"
                 style={{ maxWidth: '300px', fontSize: '0.875rem' }} // Adjust the max width as needed
               />
-              <Button variant="outline-success" style={{ fontSize: '0.875rem', padding: '0.375rem 0.75rem', margin: '10px' }}>Search</Button>
+              <Button variant="outline-success" style={{ fontSize: '0.875rem', padding: '0.375rem 0.74rem', margin: '10px' }}>Search</Button>
             </Form>
           </Navbar.Collapse>
         </div>
