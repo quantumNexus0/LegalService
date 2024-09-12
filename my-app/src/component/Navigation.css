@@ -1,0 +1,39 @@
+/* Remove hover effect from Dropdown.Toggle button */
+.nav-link.dropdown-toggle {
+    color: black; /* Default text color */
+    text-decoration: none; /* No underline by default */
+  }
+  
+  .nav-link.dropdown-toggle:hover {
+    color: black; /* Keep text color same on hover */
+    background-color: transparent; /* Remove background color on hover */
+  }
+  
+  /* Default link styles */
+  a {
+    color: black; /* Default text color */
+    text-decoration: none; /* No underline by default */
+  }
+  
+  /* Hover styles */
+  a:hover {
+    text-decoration: underline; /* Underline on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  /* Reduce spacing between list items */
+  ul.list-unstyled li {
+    margin-bottom: 0rem; /* Adjust the spacing between items */
+  }
+  
+  /* Custom link styles */
+  .link-item {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+  }
+  
+  .link-item:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
+  

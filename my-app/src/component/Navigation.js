@@ -1,10 +1,33 @@
-import React from 'react';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Navbar, Nav, Form, FormControl, Button, Dropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import changeLanguageImage from './images/change_language.png'; // Ensure the path is correct
-import Logo from './images/logo1.png'; // Ensure the path is correct
+import 'bootstrap/dist/js/bootstrap.bundle.min'; // Import Bootstrap JavaScript
+import './Navigation.css'; // Import custom CSS for navigation
+import changeLanguageImage from './images/change_language.png';
+import Logo from './images/logo1.png';
+import FindLawyer from './findlawyer'; // Ensure the file name matches the import
+import LegalAdvice from './legaladvice'; // Ensure the file name matches the import
+import IpcSection from './ipcsection';
+import LoginSignup from './loginsignup';
 
 const Navigation = () => {
+  const [expanded, setExpanded] = useState(false);
+  const [showFindLawyer, setShowFindLawyer] = useState(false);
+  const [showLegalAdvice, setShowLegalAdvice] = useState(false);
+  const [showIpcSection, setShowIpcSection] = useState(false);
+  const [showLoginsignup, setShowLoginsignup] = useState(false);
+
+  // Function to handle menu button click
+  const handleMenuClick = () => {
+    setExpanded(!expanded); // Toggle the expanded state
+  };
+
+  // Function to handle dropdown selection (this handles closing the menu)
+  const handleSelect = () => {
+    setExpanded(false); // Collapse the menu after selection
+  };
+
   const handleChange = (event) => {
     const selectedValue = event.target.value;
     if (selectedValue) {
@@ -12,6 +35,32 @@ const Navigation = () => {
     }
   };
 
+  const toggleFindLawyer = () => {
+    setShowFindLawyer(prevShow => !prevShow);
+    setShowLegalAdvice(false);
+    setShowIpcSection(false);
+    setShowLoginsignup(false);
+  };
+
+  const toggleLegalAdvice = () => {
+    setShowLegalAdvice(prevShow => !prevShow);
+    setShowFindLawyer(false);
+    setShowIpcSection(false);
+    setShowLoginsignup(false);
+  };
+  
+  const toggleIpcSection = () => {
+    setShowIpcSection(prevShow => !prevShow);
+    setShowFindLawyer(false);
+    setShowLegalAdvice(false);
+    setShowLoginsignup(false); 
+  };
+  const toggleLoginsignup = () => {
+    setShowLoginsignup(prevShow => !prevShow);
+    setShowFindLawyer(false);
+    setShowLegalAdvice(false);
+    setShowIpcSection(false); 
+  };
   return (
     <>
       {/* Top Section for Language Selector and Links */}
@@ -38,64 +87,83 @@ const Navigation = () => {
               </select>
             </div>
             <div className="d-flex flex-wrap gap-3 gap-md-4">
-              <a href="/dashboard" className="text-dark text-decoration-none fs-6 fs-md-5">Indian Kanoon</a>
-              <a href="/job-order" className="text-dark text-decoration-none fs-6 fs-md-5">Indian Penal Code</a>
-              <a href="/work-list" className="text-dark text-decoration-none fs-6 fs-md-5">Ask A Free Question</a>
-              <a href="/material-list" className="text-dark text-decoration-none fs-6 fs-md-5">Talk To Lawyer</a>
-              <a href="/planning" className="text-dark text-decoration-none fs-6 fs-md-5">Free Legal Advice</a>
-              <a href="/settings" className="text-dark text-decoration-none fs-6 fs-md-5">Lawyer Signup</a>
+              <Link to="/dashboard" className="text-dark text-decoration-none fs-6 fs-md-5">Indian Kanoon</Link>
+              <Link to="/job-order" className="text-dark text-decoration-none fs-6 fs-md-5">Indian Penal Code</Link>
+              <Link to="/work-list" className="text-dark text-decoration-none fs-6 fs-md-5">Ask A Free Question</Link>
+              <Link to="/material-list" className="text-dark text-decoration-none fs-6 fs-md-5">Talk To Lawyer</Link>
+              <Link to="/planning" className="text-dark text-decoration-none fs-6 fs-md-5">Free Legal Advice</Link>
+              <Link to="/settings" className="text-dark text-decoration-none fs-6 fs-md-5">Lawyer Signup</Link>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Navbar starts here */}
-      <Navbar className="bg-light border-bottom py-2" expand="lg">
+      {/* Navbar */}
+      <Navbar className="bg-light border-bottom py-2" expand="lg" expanded={expanded} onToggle={handleMenuClick}> 
         <div className="container d-flex align-items-center">
-          {/* Hamburger Button */}
           <Navbar.Toggle 
             aria-controls="basic-navbar-nav" 
             className="me-3 d-lg-none" 
-            style={{ fontSize: '1rem', padding: '0.25rem 0.5rem' }} // Adjust size here
+            onClick={handleMenuClick}
+            style={{ fontSize: '1rem', padding: '0.25rem 0.5rem' }} 
           />
           <Navbar.Brand href="#home" className="d-flex align-items-center flex-grow-1">
             <img
               src={Logo}
               alt="Logo"
-              className="img-fluid d-none d-sm-block" // Logo visible on small devices and up
-              style={{ maxHeight: '100px' }} // Max height for larger screens
+              className="img-fluid d-none d-sm-block"
+              style={{ maxHeight: '100px' }} 
             />
             <img
               src={Logo}
               alt="Logo"
-              className="img-fluid d-block d-sm-none" // Logo visible on extra small devices
-              style={{ maxHeight: '70px' }} // Max height for small screens
+              className="img-fluid d-block d-sm-none"
+              style={{ maxHeight: '70px' }} 
             />
           </Navbar.Brand>
           <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto fs-6 gap-3 gap-md-4 gap-sm-2 flex-wrap">
-           <Nav.Link href="/dashboard" className="nav-link">FIND A LAWYER</Nav.Link>
-           <Nav.Link href="/calendar" className="nav-link">LEGAL ADVICE</Nav.Link>
-           <Nav.Link href="/messages" className="nav-link">IPC SECTION</Nav.Link>
-           <Nav.Link href="/billing" className="nav-link">BNS SECTION</Nav.Link>
-          <Nav.Link href="/matters" className="nav-link">ABOUT</Nav.Link>
-          <Nav.Link href="/reports" className="nav-link">MY ACCOUNT</Nav.Link>
+            <Nav className="me-auto fs-6 gap-3 gap-md-4 gap-sm-2 flex-wrap">
+              <Nav.Link as={Link} to="#" onClick={toggleFindLawyer} className="nav-link">FIND A LAWYER</Nav.Link>
+              <Nav.Link as={Link} to="#" onClick={toggleLegalAdvice} className="nav-link">LEGAL ADVICE</Nav.Link>
+              <Nav.Link as={Link} to="#" onClick={toggleIpcSection} className="nav-link">IPC SECTION</Nav.Link>
+              <Dropdown className="nav-item">
+                <Dropdown.Toggle className="nav-link" id="dropdown-basic">
+                  BNS SECTION
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item as={Link} to="/popular-ipc-sections" onClick={handleSelect}>Popular BNS Sections</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/section-497-ipc" onClick={handleSelect}>Section 315 BNS</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/section-354-ipc" onClick={handleSelect}>Section 125 BNS</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/section-34-ipc" onClick={handleSelect}>Section 318 BNS</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/section-506-ipc" onClick={handleSelect}>Section 126 BNS</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/section-304-ipc" onClick={handleSelect}>Section 69 BNS</Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/section-420-ipc" onClick={handleSelect}>Section 137 BNS</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+              <Nav.Link as={Link} to="/matters" onClick={handleSelect} className="nav-link">ABOUT</Nav.Link>
+              <Nav.Link as={Link} to="/loginsignup" onClick={toggleLoginsignup} className="nav-link">MY ACCOUNT</Nav.Link>
             </Nav>
 
             {/* Search form */}
-            <Form className="d-block d-lg-none d-flex align-items-center ms-auto" role="search">
+            <Form className="d-none d-lg-flex align-items-center ms-auto" role="search">
               <FormControl
                 type="search"
                 placeholder="Search"
                 className="me-2"
                 aria-label="Search"
-                style={{ maxWidth: '300px', fontSize: '0.875rem' }} // Adjust the max width as needed
+                style={{ maxWidth: '300px', fontSize: '0.875rem' }} 
               />
               <Button variant="outline-success" style={{ fontSize: '0.875rem', padding: '0.375rem 0.74rem', margin: '10px' }}>Search</Button>
             </Form>
           </Navbar.Collapse>
         </div>
       </Navbar>
+
+      {/* Conditionally render FindLawyer and LegalAdvice components */}
+      {showFindLawyer && <FindLawyer />}
+      {showLegalAdvice && <LegalAdvice />}
+      {showIpcSection && <IpcSection/>}
+      {showLoginsignup && <LoginSignup/>}
     </>
   );
 };

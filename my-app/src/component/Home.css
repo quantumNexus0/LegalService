@@ -1,0 +1,18 @@
+.bg-primary {
+    background-color: #3F7A83 !important; /* Primary blue color from Bootstrap */
+  }
+  
+  .text-white {
+    color: #fff !important;
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .display-4 {
+      font-size: 2.5rem;
+    }
+  
+    .display-5 {
+      font-size: 1.5rem;
+    }
+  }
