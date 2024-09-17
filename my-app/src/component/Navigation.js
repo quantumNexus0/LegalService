@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { Navbar, Nav, Form, FormControl, Button, Dropdown } from 'react-bootstrap';
+import { Navbar, Nav, Dropdown } from 'react-bootstrap';   //Form, FormControl, Button, when need a search bard 
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min'; // Import Bootstrap JavaScript
-import './Navigation.css'; // Import custom CSS for navigation
+// import './Navigation.css'; // Import custom CSS for navigation
 import changeLanguageImage from './images/change_language.png';
 import Logo from './images/logo1.png';
 import FindLawyer from './findlawyer'; // Ensure the file name matches the import
 import LegalAdvice from './legaladvice'; // Ensure the file name matches the import
 import IpcSection from './ipcsection';
 import LoginSignup from './loginsignup';
+import AboutComponent from './AboutComponent';
+ // Updated import path
 
 const Navigation = () => {
   const [expanded, setExpanded] = useState(false);
@@ -17,13 +19,13 @@ const Navigation = () => {
   const [showLegalAdvice, setShowLegalAdvice] = useState(false);
   const [showIpcSection, setShowIpcSection] = useState(false);
   const [showLoginsignup, setShowLoginsignup] = useState(false);
+  const [showAboutComponent, setShowAboutComponent] = useState(false);
+  
 
-  // Function to handle menu button click
   const handleMenuClick = () => {
     setExpanded(!expanded); // Toggle the expanded state
   };
 
-  // Function to handle dropdown selection (this handles closing the menu)
   const handleSelect = () => {
     setExpanded(false); // Collapse the menu after selection
   };
@@ -40,6 +42,7 @@ const Navigation = () => {
     setShowLegalAdvice(false);
     setShowIpcSection(false);
     setShowLoginsignup(false);
+    setShowAboutComponent(false);
   };
 
   const toggleLegalAdvice = () => {
@@ -47,20 +50,32 @@ const Navigation = () => {
     setShowFindLawyer(false);
     setShowIpcSection(false);
     setShowLoginsignup(false);
+    setShowAboutComponent(false);
   };
   
   const toggleIpcSection = () => {
     setShowIpcSection(prevShow => !prevShow);
     setShowFindLawyer(false);
     setShowLegalAdvice(false);
-    setShowLoginsignup(false); 
+    setShowLoginsignup(false);
+    setShowAboutComponent(false); 
   };
+
   const toggleLoginsignup = () => {
     setShowLoginsignup(prevShow => !prevShow);
     setShowFindLawyer(false);
     setShowLegalAdvice(false);
     setShowIpcSection(false); 
+    setShowAboutComponent(false);
   };
+  const toggleAboutComponent = () => {
+    setShowAboutComponent(prevShow => !prevShow);
+    setShowFindLawyer(false);
+    setShowLegalAdvice(false);
+    setShowIpcSection(false);
+    setShowLoginsignup(false); 
+  };
+  
   return (
     <>
       {/* Top Section for Language Selector and Links */}
@@ -140,12 +155,12 @@ const Navigation = () => {
                   <Dropdown.Item as={Link} to="/section-420-ipc" onClick={handleSelect}>Section 137 BNS</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-              <Nav.Link as={Link} to="/matters" onClick={handleSelect} className="nav-link">ABOUT</Nav.Link>
+              <Nav.Link as={Link} to="/about" onClick={toggleAboutComponent} className="nav-link">ABOUT</Nav.Link>
               <Nav.Link as={Link} to="/loginsignup" onClick={toggleLoginsignup} className="nav-link">MY ACCOUNT</Nav.Link>
             </Nav>
 
             {/* Search form */}
-            <Form className="d-none d-lg-flex align-items-center ms-auto" role="search">
+            {/* <Form className="d-none d-lg-flex align-items-center ms-auto" role="search">
               <FormControl
                 type="search"
                 placeholder="Search"
@@ -154,16 +169,18 @@ const Navigation = () => {
                 style={{ maxWidth: '300px', fontSize: '0.875rem' }} 
               />
               <Button variant="outline-success" style={{ fontSize: '0.875rem', padding: '0.375rem 0.74rem', margin: '10px' }}>Search</Button>
-            </Form>
+            </Form> */}
           </Navbar.Collapse>
         </div>
       </Navbar>
+      <a href="./Home">Home</a>/<a href="./Contact">Contact</a>
 
       {/* Conditionally render FindLawyer and LegalAdvice components */}
       {showFindLawyer && <FindLawyer />}
       {showLegalAdvice && <LegalAdvice />}
       {showIpcSection && <IpcSection/>}
       {showLoginsignup && <LoginSignup/>}
+      {showAboutComponent && <AboutComponent/>}
     </>
   );
 };

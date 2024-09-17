@@ -1,0 +1,277 @@
+/* .............................................................................................. */
+/* Navigation css */
+/* Remove hover effect from Dropdown.Toggle button */
+.nav-link.dropdown-toggle {
+    color: black; /* Default text color */
+    text-decoration: none; /* No underline by default */
+  }
+  
+  .nav-link.dropdown-toggle:hover {
+    color: black; /* Keep text color same on hover */
+    background-color: transparent; /* Remove background color on hover */
+  }
+  
+  /* Default link styles */
+  a {
+    color: black; /* Default text color */
+    text-decoration: none; /* No underline by default */
+  }
+  
+  /* Hover styles */
+  a:hover {
+    text-decoration: underline; /* Underline on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  /* Reduce spacing between list items */
+  ul.list-unstyled li {
+    margin-bottom: 0rem; /* Adjust the spacing between items */
+  }
+  
+  /* Custom link styles */
+  .link-item {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+  }
+  
+  .link-item:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
+  /* ....................................................................................................... */
+  /* legal advice */
+  /* Default link styles */
+a {
+    color: black; /* Default text color */
+    text-decoration: none; /* No underline by default */
+  }
+  
+  /* Hover styles */
+  a:hover {
+    text-decoration: underline; /* Underline on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  /* Reduce spacing between list items */
+  ul.list-unstyled li {
+    margin-bottom: 0rem; /* Adjust the spacing between items */
+  }
+  .link-item {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+  }
+  
+  .link-item:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+  
+  
+  /*.........................................................................................................................................  */
+  /* IpcSection.css */
+
+/* Default link styles */
+a {
+    color: black; /* Default text color */
+    text-decoration: none; /* No underline by default */
+  }
+  
+  /* Hover styles */
+  a:hover {
+    text-decoration: underline; /* Underline on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  /* Reduce spacing between list items */
+  ul.list-unstyled li {
+    margin-bottom: 0.25rem; /* Adjust the spacing between items */
+  }
+  /* ............................................................................................................................................... */
+  /* Home */
+  
+  .bg-primary {
+    background-color: #3F7A83 !important; /* Primary blue color from Bootstrap */
+  }
+  
+  .text-white {
+    color: #fff !important;
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .display-4 {
+      font-size: 2.5rem;
+    }
+  
+    .display-5 {
+      font-size: 1.5rem;
+    }
+  }
+  /* ............................................................................................................................... */
+  /* find lawyer */
+  /* Default link styles */
+a {
+    color: black; /* Default text color */
+    text-decoration: none; /* No underline by default */
+  }
+  
+  /* Hover styles */
+  a:hover {
+    text-decoration: underline; /* Underline on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  /* Reduce spacing between list items */
+  ul.list-unstyled li {
+    margin-bottom: 0.25rem; /* Adjust the spacing between items */
+  }
+  
+  /* .................................................................................................................................... */
+  /* about components */
+  .bg-image {
+    background-image: url('./component/images/aboutsection2.jpg'); /* Path to your background image */
+    background-size: cover; /* Ensures the image covers the container */
+    background-position: center; /* Centers the background image */
+    height: 100vh;
+    width: 100%; /* Optional: sets height of the container */
+  }
+  /* ............................................................................................................................................... */
+  /* lawyer seacrh  */
+  .custom-select-wrapper {
+    position: relative;
+  }
+  
+  .form-select {
+  appearance: none; /* Removes default styling in some browsers */
+  padding-right: 2.5rem; /* Adjust if needed */
+  border-radius: 0.25rem;
+  }
+  
+  .custom-select-wrapper::after {
+    content: "\f078"; /* FontAwesome down arrow icon */
+    font-family: "Bootstrap Icons";
+    position: absolute;
+    right: 0.75rem; /* Adjust to your needs */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #6c757d; 
+    pointer-events: none;
+  }
+  
+/* .................................................................................................. */
+/* TopRatedLawyers.css */
+.custom-button {
+  border-color: blue;
+  color: blue;
+  
+}
+
+/* TopRatedLawyers.css */
+/* Hide carousel indicators (dots) */
+/* .carousel-indicators {
+  display: none;
+} */
+
+/* Optional: Adjust navigation button styles if needed */
+/* .carousel-control-prev,
+.carousel-control-next {
+  color: #000; 
+} */
+
+/* .carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+} */
+/* ............................................................................................................................ */
+/* contact css */
+
+@keyframes backgroundColorAnimation {
+  0% {
+    background-color: #ff9999; /* Light red */
+  }
+  50% {
+    background-color: #99ff99; /* Light green */
+  }
+  100% {
+    background-color: #9999ff; /* Light blue */
+  }
+}
+
+.animated-background {
+  animation: backgroundColorAnimation 10s infinite alternate;
+}
+   /* ........................ */
+   /* LegalServicesCarousel.css */
+   /* LegalServicesCarousel.css */
+.carousel-control-prev, .carousel-control-next {
+  width: 5%; /* Adjust the width as needed */
+}
+
+.carousel-control-prev {
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.carousel-control-next {
+  right: 0;
+  transform: translateX(50%);
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Customize icon background color */
+  border-radius: 50%;
+}
+
+.carousel-control-prev-icon {
+  background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41L10.83 12l4.58 4.59L14 18l-6-6 6-6 1.41 1.41z"/></svg>');
+}
+
+.carousel-control-next-icon {
+  background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8.59 16.59L13.17 12l-4.58-4.59L10 6l6 6-6 6-1.41-1.41z"/></svg>');
+}
+/* .............................................................................................................. */
+/* Styling for navigation links */
+/* Footer.css */
+.footer-container {
+  background-color: rgb(49, 48, 49);
+  color: white;
+  padding: 20px;
+}
+
+.footer-container h2 {
+  color: white;
+}
+
+.footer-container a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-container a:hover {
+  color: gray;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icon {
+  color: white;
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+.social-icon:hover {
+  color: gray;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}

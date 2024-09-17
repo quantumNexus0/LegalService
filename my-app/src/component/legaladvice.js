@@ -1,10 +1,10 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './LegalAdvice.css'; // Import the custom CSS file
+// import './LegalAdvice.css'; // Import the custom CSS file
 
 const LegalAdvice = () => {
   return (
-    <div className="container border border-dark p-4 mt-3">
+    <div className="container border border-dark p-4 mt-3 mb-3">
       <div className="row g-3">
         <div className="col-12 col-md-6 col-lg-3 mb-3">
           <h4 className="mb-2">Personal / Family</h4>

@@ -1,12 +1,12 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './FindLawyer.css'; // Ensure this path is correct
+// import './FindLawyer.css'; // Ensure this path is correct
    
 
 
 const FindLawyer = () => {
   return (
-    <div className="container border border-dark p-4 mt-3">
+    <div className="container border border-dark p-4 mt-3 mb-3">
       <div className="row mt-2">
         <div className="col-md-3">
           <h2 className="text-center mb-3">Answered Questions</h2>

@@ -1,9 +1,9 @@
 import React from 'react';
-import './IpcSection.css'; // Import the CSS file
+// import './IpcSection.css'; // Import the CSS file
 
 const IpcSection = () => {
   return (
-    <div className="container border border-dark p-4 mt-3">
+    <div className="container border border-dark p-4 mt-3 mb-3">
       <div className="row">
         <div className="col-md-3">
           <h3>Popular IPC Sections</h3>
