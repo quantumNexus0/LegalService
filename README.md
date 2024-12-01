@@ -89,16 +89,13 @@ To get the project up and running on your local machine, follow these steps:
 Here are some screenshots of the website's key pages:
 
 ### Homepage  
-![Homepage](src/images/homepage.png)
+![Homepage](./src/component/images/landingpage.png)
 
 ### Lawyer Search Page  
-![Lawyer Search](src/images/lawyer-search.png)
+![Lawyer Search](./src/component/images/secondpage.png)
 
 ### Lawyer Profile Page  
-![Lawyer Profile](src/images/lawyer-profile.png)
-
-### Booking Page  
-![Booking](src/images/booking-page.png)
+![Lawyer Profile](./src/component/images/findLegal.png)
 
 ---
 
