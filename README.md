@@ -151,7 +151,7 @@ Feel free to check out the [GitHub repository](https://github.com/your-username/
 ```
 
 ### Additional Notes:
-- **Images**: Replace the placeholders (e.g., `src/images/homepage.png`) with actual paths where your images are stored.
+
 - **Backend Development**: You can specify more backend details once it's started (e.g., database schema, API documentation).
 - **Monetization**: The section mentions API access for future monetization. You can further expand this as you move toward creating APIs and charging for access.
 - **Contributions**: This section outlines how others can contribute, which is helpful for open-source collaboration.
